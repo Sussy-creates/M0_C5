@@ -18,13 +18,14 @@ def median(scores):
         if score >= 0 and score <= 100:
             scores_valid.append(score)
     tests = len(scores_valid)
+    middle = tests//2
     if len(scores_valid) == 0:
         return -1
     else:
         if tests % 2 == 0:
-            return int((scores_valid[tests//2-1] + scores_valid[tests//2])/2)
+            return int((scores_valid[middle-1] + scores_valid[middle])/2)
         else:
-            return int(scores_valid[tests//2])
+            return int(scores_valid[middle])
 
 if __name__ == '__main__':
     scores = input("Input list of test scores, space-separated: ")
